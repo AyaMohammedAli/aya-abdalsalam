@@ -35,7 +35,6 @@
             overflow-x: hidden;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -50,7 +49,6 @@
             background: var(--accent-primary);
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -93,7 +91,6 @@
             color: var(--accent-primary);
         }
 
-        /* Hero Section */
         header.hero {
             min-height: 100vh;
             display: flex;
@@ -184,7 +181,6 @@
             background: rgba(56, 189, 248, 0.05);
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -202,7 +198,6 @@
             color: var(--accent-primary);
         }
 
-        /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -235,7 +230,6 @@
             color: var(--text-muted);
         }
 
-        /* Skills Section */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -284,7 +278,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -364,52 +357,104 @@
             color: var(--accent-primary);
         }
 
-        /* Contact Section */
+        /* Contact Section Styling */
         .contact-section {
-            text-align: center;
             background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
             border-top: 1px solid var(--border-color);
         }
 
-        .contact-box {
-            max-width: 700px;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2.5rem;
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .contact-info-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 3rem;
-            border-radius: 24px;
-        }
-
-        .social-links {
+            padding: 2.5rem;
+            border-radius: 20px;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             gap: 1.5rem;
-            margin-top: 2rem;
         }
 
-        .social-btn {
-            width: 50px;
-            height: 50px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
+        .contact-item {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-main);
-            font-size: 1.2rem;
+            align-items: flex-start;
+            gap: 1rem;
             text-decoration: none;
+            color: var(--text-main);
             transition: var(--transition);
         }
 
-        .social-btn:hover {
-            background: var(--accent-primary);
-            color: var(--bg-primary);
-            border-color: var(--accent-primary);
-            transform: translateY(-3px);
+        .contact-item:hover {
+            color: var(--accent-primary);
         }
 
-        /* Footer */
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--accent-primary);
+            margin-top: 0.2rem;
+        }
+
+        .contact-item div h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-item div p {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .contact-form-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -420,9 +465,8 @@
         }
 
         @media (max-width: 768px) {
-            .about-grid {
+            .about-grid, .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
             .nav-links {
                 display: none;
@@ -434,13 +478,14 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">Aya Abdalsalam</a>
+        <a href="#" class="logo">&lt;/&gt; AYA.DEV</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Let's Talk</a>
     </nav>
 
     <!-- Hero Section -->
@@ -498,7 +543,7 @@
                     <span class="tag">Scikit-Learn</span>
                     <span class="tag">LangChain</span>
                     <span class="tag">LangGraph</span>
-                    <span class="tag">RAG Architectures</span>
+                    <span class="tag">Kaggle Competitions</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -507,7 +552,7 @@
                     <span class="tag">Streamlit</span>
                     <span class="tag">Pandas</span>
                     <span class="tag">Power BI</span>
-                    <span class="tag">Data Pipelines</span>
+                    <span class="tag">Tabular Modeling</span>
                     <span class="tag">Dataset Governance</span>
                 </div>
             </div>
@@ -572,15 +617,68 @@
 
     <!-- Contact Section -->
     <section id="contact" class="container contact-section">
-        <h2 class="section-title">Get in <span>Touch</span></h2>
-        <div class="contact-box">
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">I'm always open to discussing new machine learning challenges, software engineering opportunities, or collaborative projects.</p>
-            <a href="mailto:aya.m.abdalsalam@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> aya.m.abdalsalam@gmail.com</a>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/aya-abdalsalam-021030298/" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/AyaMohammedAli?tab=repositories" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:aya.m.abdalsalam@gmail.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h3>Contact Information</h3>
+                
+                <a href="mailto:aya.m.abdalsalam@gmail.com" class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email Me</h4>
+                        <p>aya.m.abdalsalam@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/aya-abdalsalam-021030298/" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <div>
+                        <h4>LinkedIn Profile</h4>
+                        <p>Connect with Aya</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/AyaMohammedAli?tab=repositories" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-github"></i>
+                    <div>
+                        <h4>GitHub Repositories</h4>
+                        <p>Explore Code</p>
+                    </div>
+                </a>
+
+                <a href="https://www.kaggle.com" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-kaggle"></i>
+                    <div>
+                        <h4>Kaggle Profile</h4>
+                        <p>View Competitions & Notebooks</p>
+                    </div>
+                </a>
+
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: auto;">Based in Alexandria, Egypt • Open to remote & global opportunities.</p>
+            </div>
+
+            <div class="contact-form-card">
+                <form action="mailto:aya.m.abdalsalam@gmail.com" method="POST" enctype="text/plain">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" class="form-control" value="Project Inquiry / Job Opportunity">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="form-control" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
